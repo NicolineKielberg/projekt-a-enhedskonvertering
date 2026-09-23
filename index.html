@@ -1,1 +1,41 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Enhedskonvertering</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main>
+        <h1>Konvetering af enheder</h1>
+
+        <label for="category">Vælg type</label>
+
+        <select id="category">
+            <option value="temperature">Temperatur</option>
+            <option value="length">Længde</option>
+            <option value="weight">Vægt</option>
+        </select>
+
+        <label for="conversion">Vælg konvertering</label>
+
+        <select id="conversion">
+            <option value="celsius-fahrenheit">Celsius til Fahrenheit</option>
+            <option value="fahrenheit-celsius">Fahrenheit til Celsius</option>
+        </select>
+
+        <label for="value">Indtast værdi</label>
+        <input id="value" placeholder="Indtast en værdi">
+
+        <button id="convertButton">Konvertér</button>
+
+        <p id="result"></p>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
