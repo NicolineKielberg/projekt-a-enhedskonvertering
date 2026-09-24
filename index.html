@@ -11,15 +11,19 @@
 
 <body>
     <main>
-        <h1>Konvetering af enheder</h1>
+        <h1>Konvertering af enheder</h1>
 
-        <label for="category">Vælg type</label>
+        <!-- Valg af type -->
 
-        <select id="category">
+        <label for="type">Vælg type</label>
+
+        <select id="type">
             <option value="temperature">Temperatur</option>
             <option value="length">Længde</option>
             <option value="weight">Vægt</option>
         </select>
+
+        <!-- Valg af konvertering -->
 
         <label for="conversion">Vælg konvertering</label>
 
@@ -27,6 +31,8 @@
             <option value="celsius-fahrenheit">Celsius til Fahrenheit</option>
             <option value="fahrenheit-celsius">Fahrenheit til Celsius</option>
         </select>
+
+        <!-- Input og resultat -->
 
         <label for="value">Indtast værdi</label>
         <input id="value" placeholder="Indtast en værdi">

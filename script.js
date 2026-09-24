@@ -1,12 +1,12 @@
-// Valg af konvertering
+// Valg af type og konvertering
 
-const category = document.getElementById("category");
+const type = document.getElementById("type");
 const conversion = document.getElementById("conversion");
 
-category.addEventListener("change", function () {
+type.addEventListener("change", function () {
     result.textContent = "";
 
-    switch (category.value) {
+    switch (type.value) {
 
         case "temperature":
             conversion.innerHTML =
@@ -37,10 +37,6 @@ category.addEventListener("change", function () {
 const valueInput = document.getElementById("value");
 const convertButton = document.getElementById("convertButton");
 const result = document.getElementById("result");
-
-conversion.addEventListener("change", function () {
-    result.textContent = "";
-});
 
 convertButton.addEventListener("click", function () {
     const value = Number(valueInput.value);
