@@ -16,14 +16,14 @@ type.addEventListener("change", function () {
 
         case "længde":
             konvertering.innerHTML =
-                '<option value="kilometer-mile">Kilometer til Miles</option>' +
-                '<option value="mile-kilometer">Miles til Kilometer</option>';
+                '<option value="kilometer-mil">Kilometer til Mil</option>' +
+                '<option value="mil-kilometer">Mil til Kilometer</option>';
             break;
 
         case "vægt":
             konvertering.innerHTML =
-                '<option value="kilogram-pound">Kilogram til Pund</option>' +
-                '<option value="pound-kilogram">Pund til Kilogram</option>';
+                '<option value="kilogram-pund">Kilogram til Pund</option>' +
+                '<option value="pund-kilogram">Pund til Kilogram</option>';
             break;
 
         default:
@@ -63,25 +63,25 @@ konverterKnap.addEventListener("click", function () {
                 tilEnhed = "°C";
                 break;
 
-            case "kilometer-mile":
+            case "kilometer-mil":
                 konverteretVærdi = værdi * 0.6214;
                 fraEnhed = "km";
                 tilEnhed = "mi";
                 break;
 
-            case "mile-kilometer":
+            case "mil-kilometer":
                 konverteretVærdi = værdi / 0.6214;
                 fraEnhed = "mi";
                 tilEnhed = "km";
                 break;
 
-            case "kilogram-pound":
+            case "kilogram-pund":
                 konverteretVærdi = værdi * 2.2046;
                 fraEnhed = "kg";
                 tilEnhed = "lb";
                 break;
 
-            case "pound-kilogram":
+            case "pund-kilogram":
                 konverteretVærdi = værdi / 2.2046;
                 fraEnhed = "lb";
                 tilEnhed = "kg";
