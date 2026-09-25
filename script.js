@@ -1,98 +1,97 @@
 // Valg af type og konvertering
 
 const type = document.getElementById("type");
-const conversion = document.getElementById("conversion");
+const konvertering = document.getElementById("konvertering");
 
 type.addEventListener("change", function () {
-    result.textContent = "";
+    resultat.textContent = "";
 
     switch (type.value) {
 
-        case "temperature":
-            conversion.innerHTML =
+        case "temperatur":
+            konvertering.innerHTML =
                 '<option value="celsius-fahrenheit">Celsius til Fahrenheit</option>' +
                 '<option value="fahrenheit-celsius">Fahrenheit til Celsius</option>';
             break;
 
-        case "length":
-            conversion.innerHTML =
+        case "længde":
+            konvertering.innerHTML =
                 '<option value="kilometer-mile">Kilometer til Miles</option>' +
                 '<option value="mile-kilometer">Miles til Kilometer</option>';
             break;
 
-        case "weight":
-            conversion.innerHTML =
+        case "vægt":
+            konvertering.innerHTML =
                 '<option value="kilogram-pound">Kilogram til Pund</option>' +
                 '<option value="pound-kilogram">Pund til Kilogram</option>';
             break;
 
-         default:
-            conversion.innerHTML = "";
+        default:
+            konvertering.innerHTML = "";
             break;
     }
 });
 
 // Beregning af konvertering og validering af input
 
-const valueInput = document.getElementById("value");
-const convertButton = document.getElementById("convertButton");
-const result = document.getElementById("result");
+const værdiInput = document.getElementById("værdi");
+const konverterKnap = document.getElementById("konverterKnap");
+const resultat = document.getElementById("resultat");
 
-convertButton.addEventListener("click", function () {
-    const value = Number(valueInput.value);
+konverterKnap.addEventListener("click", function () {
+    const værdi = Number(værdiInput.value);
 
-    if (valueInput.value === "" || Number.isNaN(value)) {
-        result.textContent = "Indtast venligst et gyldigt tal.";
-        
+    if (værdiInput.value === "" || Number.isNaN(værdi)) {
+        resultat.textContent = "Indtast venligst et gyldigt tal.";
     } else {
 
-        let convertedValue;
-        let fromUnit;
-        let toUnit;
+        let konverteretVærdi;
+        let fraEnhed;
+        let tilEnhed;
 
-        switch (conversion.value) {
+        switch (konvertering.value) {
 
             case "celsius-fahrenheit":
-                convertedValue = value * 9 / 5 + 32;
-                fromUnit = "°C";
-                toUnit = "°F";
+                konverteretVærdi = værdi * 9 / 5 + 32;
+                fraEnhed = "°C";
+                tilEnhed = "°F";
                 break;
 
             case "fahrenheit-celsius":
-                convertedValue = (value - 32) * 5 / 9;
-                fromUnit = "°F";
-                toUnit = "°C";
+                konverteretVærdi = (værdi - 32) * 5 / 9;
+                fraEnhed = "°F";
+                tilEnhed = "°C";
                 break;
 
             case "kilometer-mile":
-                convertedValue = value * 0.6214;
-                fromUnit = "km";
-                toUnit = "mi";
+                konverteretVærdi = værdi * 0.6214;
+                fraEnhed = "km";
+                tilEnhed = "mi";
                 break;
 
             case "mile-kilometer":
-                convertedValue = value / 0.6214;
-                fromUnit = "mi";
-                toUnit = "km";
+                konverteretVærdi = værdi / 0.6214;
+                fraEnhed = "mi";
+                tilEnhed = "km";
                 break;
 
             case "kilogram-pound":
-                convertedValue = value * 2.2046;
-                fromUnit = "kg";
-                toUnit = "lb";
+                konverteretVærdi = værdi * 2.2046;
+                fraEnhed = "kg";
+                tilEnhed = "lb";
                 break;
 
             case "pound-kilogram":
-                convertedValue = value / 2.2046;
-                fromUnit = "lb";
-                toUnit = "kg";
+                konverteretVærdi = værdi / 2.2046;
+                fraEnhed = "lb";
+                tilEnhed = "kg";
                 break;
         
             default:
-                result.textContent = "Vælg en gyldig konvertering.";
+                resultat.textContent = "Vælg en gyldig konvertering.";
                 return;
         }
 
-        result.textContent = `${value} ${fromUnit} = ${convertedValue.toFixed(2)} ${toUnit}`;
+        resultat.textContent = `${værdi} ${fraEnhed} = ${konverteretVærdi.toFixed(2)} ${tilEnhed}`;
     }
 });
